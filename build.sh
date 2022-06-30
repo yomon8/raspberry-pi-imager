@@ -6,7 +6,7 @@ cd ${SCRIPT_DIR}
 DOCKERFILE_DIR=./docker
 DOCKER_IMAGE_NAME=packer-raspberrypi-imager
 
-docker build -t ${DOCKER_IMAGE_NAME} ${DOCKERFILE_DIR}
+DOCKER_BUILDKIT=1 docker build -t ${DOCKER_IMAGE_NAME} ${DOCKERFILE_DIR}
 
 docker run \
   --rm \
